@@ -5,6 +5,8 @@
 #include <CLI/CLI.hpp>
 #include <spdlog/spdlog.h>
 
+#include "example/example.h"
+
 // This file will be generated automatically when you run the CMake configuration step.
 // It creates a namespace called `myproject`.
 // You can modify the source template at `configured_files/config.hpp.in`.
@@ -14,6 +16,8 @@
 // NOLINTNEXTLINE(bugprone-exception-escape)
 int main(int argc, const char **argv)
 {
+  example myexample;
+
   try {
     CLI::App app{ fmt::format("{} version {}", myproject::cmake::project_name, myproject::cmake::project_version) };
 

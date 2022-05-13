@@ -133,6 +133,9 @@ add_subdirectory(configured_files)
 add_subdirectory(src)
 
 # Adding the tests:
+#option(ENABLE_CATCH "Enable catch test framework" ON)
+option(ENABLE_GOOGLETEST "Enable google test framework" ON)
+
 option(ENABLE_TESTING "Enable the tests" ${PROJECT_IS_TOP_LEVEL})
 if(ENABLE_TESTING)
   enable_testing()
