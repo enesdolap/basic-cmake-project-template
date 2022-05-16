@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"optional": "cpp"
+		},
+		"diffEditor.ignoreTrimWhitespace": true,
+	},
+	"launch": {
+		"configurations": [],
+		"compounds": []
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cmake-tools",
+			"ms-vscode.cpptools",
+			"ms-vscode.cpptools-themes",
+			"ms-vscode-remote.remote-ssh",
+			"twxs.cmake",
+			"ms-vscode.cpptools-extension-pack",
+			"jeff-hykin.better-cpp-syntax",
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": []
+	}
+}
