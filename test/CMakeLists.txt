@@ -92,11 +92,17 @@ if(ENABLE_CATCH)
 elseif(ENABLE_GOOGLETEST)
   find_package(GTest REQUIRED)
 
-  file(GLOB_RECURSE MYPROJECT_TEST_SOURCES CONFIGURE_DEPENEDS "example/*.cpp")
+  file(GLOB_RECURSE MYPROJECT_SOURCES CONFIGURE_DEPENEDS "${CMAKE_SOURCE_DIR}/src/example/*.cpp")
+  file(GLOB_RECURSE MYPROJECT_TEST_SOURCES CONFIGURE_DEPENEDS "example_test/*.cpp")
 
-  add_executable(gtest_main_test gtest_main_ex.cpp "${MYPROJECT_TEST_SOURCES}")
-  target_link_libraries(gtest_main_test GTest::gtest GTest::gtest_main)
+  set(ALL_SOURCE_FILES "${MYPROJECT_SOURCES}")
+  set(ALL_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/src/")
 
-  gtest_discover_tests(gtest_main_test)
+  add_executable(tests main.cpp "${MYPROJECT_TEST_SOURCES}" "${ALL_SOURCE_FILES}")
+
+  target_link_libraries(tests GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_main)
+  target_include_directories(tests PUBLIC "${ALL_INCLUDE_DIRS}")
+
+  gtest_discover_tests(tests)
 
 endif()

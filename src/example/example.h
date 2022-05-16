@@ -8,6 +8,7 @@ private:
 public:
     example(/* args */);
     ~example();
+    unsigned int factorial(unsigned int number);
 };
 
 #endif
