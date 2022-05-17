@@ -133,7 +133,6 @@ add_subdirectory(configured_files)
 add_subdirectory(src)
 
 # Adding the tests:
-#option(ENABLE_CATCH "Enable catch test framework" ON)
 option(ENABLE_GOOGLETEST "Enable google test framework" ON)
 
 option(ENABLE_TESTING "Enable the tests" ${PROJECT_IS_TOP_LEVEL})
@@ -149,10 +148,9 @@ if(MSVC)
   get_all_installable_targets(all_targets)
   message("all_targets=${all_targets}")
   set_target_properties(${all_targets} PROPERTIES VS_DEBUGGER_ENVIRONMENT "PATH=$(VC_ExecutablePath_x64);%PATH%")
-endif()
-
 # set the startup project for the "play" button in MSVC
 set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT intro)
+endif()
 
 if(CMAKE_SKIP_INSTALL_RULES)
   return()

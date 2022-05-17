@@ -27,14 +27,14 @@ protected:
 
   }
 
-  example factoria_ex;
+  example factorial_ex;
 };
 
 
 TEST_F(ExampleClassTest, ExampleClassFactorialExample)
 {
-  EXPECT_EQ(factoria_ex.factorial(1), 1);
-  EXPECT_EQ(factoria_ex.factorial(2), 2);
-  EXPECT_EQ(factoria_ex.factorial(3), 6);
-  EXPECT_EQ(factoria_ex.factorial(10), 3628800);
+  EXPECT_EQ(factorial_ex.factorial(1), 1);
+  EXPECT_EQ(factorial_ex.factorial(2), 2);
+  EXPECT_EQ(factorial_ex.factorial(3), 6);
+  EXPECT_EQ(factorial_ex.factorial(10), 3628800);
 }

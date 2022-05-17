@@ -4,10 +4,17 @@ find_package(CLI11 CONFIG REQUIRED)
 
 # Generic test that uses conan libs
 
-file(GLOB_RECURSE MYPROJECT_SOURCES CONFIGURE_DEPENEDS "./*.cpp")
-file(GLOB_RECURSE MYPROJECT_HEADERS CONFIGURE_DEPENEDS "./*.h")
+set(Sources 
+    "main.cpp"
+    "example/example.cpp"
+)
 
-add_executable(intro ${MYPROJECT_SOURCES})
+
+set(Headers 
+    "example/example.h"
+)
+
+add_executable(intro ${Sources} ${Headers})
 
 target_link_libraries(
   intro
